@@ -8,6 +8,16 @@ The usual `keyring` commands can be used with this package to set and manage the
 
 The keyring package can be used as normal within code to get credentials saved as Kubernetes secrets, without any modifications to the code from what is done on regular Windows servers using the credential manager backend.
 
-To install as Python package use command: `pip install .`
+## Install Normally
+
+To install use the command: `pip install kubernetes-secrets-keyring`
+
+## Install for Debugging
+
+The following describes how to install and use within the git repo (for instance, if making changes). Make sure to set the current directory to the root of the repo for the following commands.
+
+To install as Python package use the command: `pip install .`
 
 To test simply run `pytest` command.
+
+To build use the command: `python -m build`
