@@ -66,13 +66,22 @@ def _check_if_kubernetes():
     return os.getenv("KUBERNETES_SERVICE_HOST", None) is not None
 
 
+def _get_priority():
+    """
+    Obtains priority that should be used for the service.
+    """
+    if not _check_if_kubernetes():
+        return -1
+    return int(os.getenv("KUBERNETES_KEYRING_PRIORITY", "20"))
+
+
 class KubernetesSecretsKeyring(keyring.backend.KeyringBackend):
     """
     Get and set credentials from Kubernetes secrets.
     """
 
     # pylint: disable-next=used-before-assignment
-    priority = 20 if _check_if_kubernetes() else -1
+    priority = _get_priority()
 
     def get_password(self, service, username):
         """

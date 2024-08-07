@@ -2,7 +2,7 @@
 
 Keyring backend that uses Kubernetes secrets. It uses `kubectl` commands to set, read, and delete credentials stored as Kubernetes secrets.
 
-It automatically installs as backend with priority 20 if installed on a system within a Kubernetes cluster, above any keyring present by default. This means after installing this package, you can use keyring exactly as usual without any need to reference this package. If installed on a system without Kubernetes, it should have no effect, as it checks if `KUBERNETES_SERVICE_HOST` is set and assigns itself a negative priority otherwise.
+It automatically installs as backend with priority 20 (by default, can be adjusted with the `KUBERNETES_KEYRING_PRIORITY` environment variable) if installed on a system within a Kubernetes cluster, above any keyring present by default. This means after installing this package, you can use keyring exactly as usual without any need to reference this package. If installed on a system without Kubernetes, it should have no effect, as it checks if `KUBERNETES_SERVICE_HOST` is set and assigns itself a negative priority otherwise.
 
 The usual `keyring` commands can be used with this package to set and manage the credentials. Kubernetes secrets are immutable, so you need to delete a secret before you can set a new password if the password changed.
 
