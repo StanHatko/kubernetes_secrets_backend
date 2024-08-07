@@ -1,3 +1,4 @@
 build/*
+dist/*
 src/kubernetes_secrets_keyring.egg-info/*
 *.pyc
