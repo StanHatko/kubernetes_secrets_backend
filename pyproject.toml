@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kubernetes_secrets_keyring"
-version = "0.2.4"
+version = "0.2.5"
 authors = [{ name = "Stan Hatko", email = "stan_hatko@live.com" }]
 description = "Keyring backend using Kubernetes secrets."
 readme = "README.md"
@@ -19,3 +19,6 @@ classifiers = [
 
 [project.entry-points."keyring.backends"]
 KubernetesSecretsKeyring = "kubernetes_secrets_keyring"
+
+[project.urls]
+Repository = "https://github.com/StanHatko/kubernetes_secrets_backend"
